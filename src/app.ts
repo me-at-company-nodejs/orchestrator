@@ -1,12 +1,12 @@
-import express, { Application, Request, Response} from 'express';
+import express, { Application } from 'express';
+import orchestratorRoute from './routes/orchestrator.route';
 
 const app: Application = express();
 const port: number = 3000;
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello orchestrator');
-});
+// Link orchestratorRoute with app
+app.use('/', orchestratorRoute);
 
 app.listen(port, () => {
-    console.log(`Connectted successfully on port ${port}`);
+    console.log(`Connected successfully on port ${port}`);
 });
