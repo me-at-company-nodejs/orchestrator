@@ -11,7 +11,7 @@ export class TimeoffService {
             return resposne;   
         } catch (error) {
             const axiosError = error as AxiosError;
-            console.log("Error in timeoff service:: healthcheck: ", axiosError.message);
+            console.log(`Error in timeoff service:: healthcheck: ${JSON.stringify(axiosError.message)} and ${JSON.stringify(axiosError.response?.data)}`);
             return {
                 "data": {
                     "name": "timeoff",

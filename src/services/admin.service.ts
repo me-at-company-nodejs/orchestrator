@@ -11,7 +11,7 @@ export class AdminService {
             return response;
         } catch (error) {
             const axiosError = error as AxiosError;
-            console.log("Error in admin service:: healthcheck: ", axiosError.message);
+            console.log(`Error in admin service:: healthcheck: ${JSON.stringify(axiosError.message)} and ${JSON.stringify(axiosError.response?.data)}`);
             return {
                 "data": {
                     "name": "admin",
